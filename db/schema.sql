@@ -1,0 +1,16 @@
+--   CRIAÇÃO DO BANCO DE DADOS CONCESSIONÁRIA
+CREATE DATABASE IF NOT EXISTS concessionaria
+  CHARACTER SET utf8mb4
+  COLLATE utf8mb4_unicode_ci;
+
+USE concessionaria;
+
+--     TABELA CARRO
+CREATE TABLE IF NOT EXISTS carro (
+    id BIGINT NOT NULL AUTO_INCREMENT,
+    modelo VARCHAR(100) NOT NULL,
+    marca VARCHAR(100) NOT NULL,
+    ano INT NOT NULL,
+    preco DECIMAL(10,2) NOT NULL,
+    PRIMARY KEY (id)
+);
