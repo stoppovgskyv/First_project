@@ -1,47 +1,79 @@
 <!DOCTYPE html>
+<!-- Define que o documento é HTML5 -->
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <!-- Título mostrado na aba do navegador -->
     <title>Novo Carro</title>
+
+    <!-- Importação do Bootstrap para estilização do formulário -->
     <link rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
 </head>
+
+<!-- A classe container centraliza o conteúdo, mt-4 adiciona margem superior -->
 <body class="container mt-4">
 
 <h1>Novo carro</h1>
 
-<form th:action="@{/carros}" th:object="${carro}" method="post" class="row g-3">
+<form th:action="@{/carros}"
+      th:object="${carro}"
+      method="post"
+      class="row g-3">
 
+    <!-- Campo: Modelo -->
     <div class="col-md-6">
         <label class="form-label">Modelo</label>
+
         <input type="text" class="form-control" th:field="*{modelo}">
-        <div class="text-danger" th:if="${#fields.hasErrors('modelo')}"
+
+        <!-- Exibe mensagem de erro de validação, caso exista -->
+        <div class="text-danger"
+             th:if="${#fields.hasErrors('modelo')}"
              th:errors="*{modelo}"></div>
     </div>
 
+    <!-- Campo: Marca -->
     <div class="col-md-6">
         <label class="form-label">Marca</label>
         <input type="text" class="form-control" th:field="*{marca}">
-        <div class="text-danger" th:if="${#fields.hasErrors('marca')}"
+        <div class="text-danger"
+             th:if="${#fields.hasErrors('marca')}"
              th:errors="*{marca}"></div>
     </div>
 
+    <!-- Campo: Ano -->
     <div class="col-md-4">
         <label class="form-label">Ano</label>
+
+        <!-- type="number" garante que apenas números sejam digitados -->
         <input type="number" class="form-control" th:field="*{ano}">
-        <div class="text-danger" th:if="${#fields.hasErrors('ano')}"
+        <div class="text-danger"
+             th:if="${#fields.hasErrors('ano')}"
              th:errors="*{ano}"></div>
     </div>
 
+    <!-- Campo: Preço -->
     <div class="col-md-4">
         <label class="form-label">Preço</label>
+
+        <!--
+            step="0.01":
+              - Permite número com 2 casas decimais.
+        -->
         <input type="number" step="0.01" class="form-control" th:field="*{preco}">
-        <div class="text-danger" th:if="${#fields.hasErrors('preco')}"
+        <div class="text-danger"
+             th:if="${#fields.hasErrors('preco')}"
              th:errors="*{preco}"></div>
     </div>
 
+    <!-- Botões de ação -->
     <div class="col-12">
+
+        <!-- Botão para enviar o formulário -->
         <button type="submit" class="btn btn-success">Salvar</button>
+
+        <!-- Link para voltar à lista sem salvar nada -->
         <a th:href="@{/carros}" class="btn btn-secondary">Voltar</a>
     </div>
 </form>
