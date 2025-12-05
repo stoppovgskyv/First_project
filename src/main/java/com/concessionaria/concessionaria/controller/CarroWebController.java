@@ -33,9 +33,7 @@ public class CarroWebController {
         this.service = service;
     }
 
-    // ========================================================================
-    // LISTAR (com filtro opcional por modelo)
-    // ========================================================================
+    //LISTAR (com filtro opcional por modelo)
     /**
      * Exibe a lista de carros. Se o parâmetro "modelo" for enviado, faz um
      * filtro por modelo.
@@ -62,9 +60,7 @@ public class CarroWebController {
         return "carros-lista";
     }
 
-    // ========================================================================
     // FORMULÁRIO PARA CRIAR NOVO CARRO
-    // ========================================================================
     /**
      * Exibe o formulário de criação de um novo carro. Envia um DTO vazio para
      * popular o formulário do Thymeleaf.
@@ -75,13 +71,11 @@ public class CarroWebController {
         return "carros-form";
     }
 
-    // ========================================================================
     // SALVAR NOVO CARRO
-    // ========================================================================
-    /**
-     * Recebe os dados do formulário de novo carro. Valida o DTO e, caso existam
-     * erros, retorna ao formulário. Se estiver tudo ok, chama o serviço para
-     * criar o carro.
+    /*
+    Recebe os dados do formulário de novo carro. Valida o DTO e, caso existam
+    erros, retorna ao formulário. Se estiver tudo ok, chama o serviço para
+    criar o carro.
      */
     @PostMapping
     public String salvar(
@@ -100,9 +94,7 @@ public class CarroWebController {
         return "redirect:/carros";
     }
 
-    // ========================================================================
     // FORMULÁRIO PARA EDITAR CARRO EXISTENTE
-    // ========================================================================
     /**
      * Abre o formulário de edição preenchendo o DTO com os dados atuais do
      * carro.
@@ -128,9 +120,7 @@ public class CarroWebController {
         return "carros-form-editar";
     }
 
-    // ========================================================================
     // ATUALIZAR CARRO EXISTENTE
-    // ========================================================================
     /**
      * Recebe os dados do formulário de edição. Valida o DTO e atualiza o carro
      * no banco.
@@ -155,9 +145,7 @@ public class CarroWebController {
         return "redirect:/carros";
     }
 
-    // ========================================================================
     // EXCLUIR CARRO
-    // ========================================================================
     /**
      * Exclui um carro com base no ID e redireciona para a listagem.
      */

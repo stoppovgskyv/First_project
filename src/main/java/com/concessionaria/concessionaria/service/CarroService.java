@@ -10,14 +10,6 @@ import com.concessionaria.concessionaria.dto.CarroResponseDTO;
 import com.concessionaria.concessionaria.model.Carro;
 import com.concessionaria.concessionaria.repository.CarroRepository;
 
-/**
- * Camada de serviço responsável pela LÓGICA DE NEGÓCIO dos carros.
- *
- * Aqui ficam: - regras e validações adicionais, - chamadas ao repositório
- * (persistência), - conversões entre DTOs e entidades, - tratamento de erros.
- *
- * O controller NUNCA deve acessar o banco diretamente — tudo passa por aqui.
- */
 @Service
 public class CarroService {
 
@@ -31,9 +23,7 @@ public class CarroService {
         this.repository = repository;
     }
 
-    // ===============================================================
     // Criar carro
-    // ===============================================================
     /**
      * Cria um novo carro no banco de dados a partir dos dados vindos do DTO.
      */
@@ -53,9 +43,7 @@ public class CarroService {
         return toResponse(salvo);
     }
 
-    // ===============================================================
     // Listar todos
-    // ===============================================================
     /**
      * Busca todos os carros cadastrados no banco.
      */
@@ -68,9 +56,7 @@ public class CarroService {
                 .collect(Collectors.toList());
     }
 
-    // ===============================================================
     // Buscar por ID
-    // ===============================================================
     /**
      * Busca um carro pelo ID.
      *
@@ -85,9 +71,7 @@ public class CarroService {
         return toResponse(carro);
     }
 
-    // ===============================================================
     // Atualizar
-    // ===============================================================
     /**
      * Atualiza os dados de um carro existente.
      */
@@ -109,9 +93,7 @@ public class CarroService {
         return toResponse(atualizado);
     }
 
-    // ===============================================================
     // Deletar
-    // ===============================================================
     /**
      * Deleta um carro pelo ID.
      *
@@ -127,9 +109,7 @@ public class CarroService {
         repository.deleteById(id);
     }
 
-    // ===============================================================
     // Conversão Entidade -> DTO de resposta
-    // ===============================================================
     /**
      * Converte uma entidade Carro em um CarroResponseDTO. Essa separação
      * garante: - proteção da entidade (não expor diretamente), - controle total
