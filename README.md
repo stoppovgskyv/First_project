@@ -6,9 +6,8 @@ Este projeto é um sistema Web completo para gerenciamento de carros em uma conc
 - Listar carros  
 - Editar carros  
 - Excluir carros  
-- Visualização em interface web (Thymeleaf + Bootstrap)  
-- API REST opcional (/api/carros)  
-
+- Visualização em interface web (Thymeleaf + Bootstrap)
+  
 ---
 
 ## 🛠 Tecnologias Utilizadas
@@ -19,8 +18,7 @@ Este projeto é um sistema Web completo para gerenciamento de carros em uma conc
 - Spring Data JPA  
 - MySQL  
 - Thymeleaf  
-- Bootstrap  
-- HikariCP  
+- Bootstrap   
 - Maven  
 
 ---
